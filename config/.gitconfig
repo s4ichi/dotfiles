@@ -1,0 +1,31 @@
+[user]
+  name = s4ichi
+  email = s.wakeup31@gmail.com
+[color]
+  ui = auto
+[alias]
+	st = status
+	co = checkout
+	ca = commit -a
+	ps = push
+	unstage = reset HEAD
+	lg = log --stat --graph --decorate=full
+	pl = pull
+[pull]
+  rebase = true
+[merge]
+  ff = only
+[push]
+  default = simple
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+[ghq]
+	root = ~/src
+[core]
+	precomposeunicode = true
+	quotepath = false
+  pager = LESSCHARSET=utf-8 less -cm
+[url "git@github.com:"]
+    insteadOf = https://github.com/
