@@ -8,8 +8,10 @@ directory "#{ENV['HOME']}/.zsh/functions" do
   owner node[:user]
 end
 
-execute "touch #{ENV['HOME']}/.zsh/00-machine.zsh" do
+file "#{ENV['HOME']}/.zsh/00-machine.zsh" do
   not_if "test -e #{ENV['HOME']}/.zsh/00-machine.zsh"
+  owner node[:user]
+  content '# THEME_COLOR=raspberry'
 end
 
 ln '.zsh/ext-peco.zsh'
