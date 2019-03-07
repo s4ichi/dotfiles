@@ -15,6 +15,7 @@ include_cookbook 'zsh'
 include_cookbook 'tmux'
 include_cookbook 'emacs'
 include_cookbook 'peco'
+include_cookbook 'ghq'
 
 execute "defaults write -g InitialKeyRepeat -int #{node[:initial_key_repeat]}" do
   not_if "test $(defaults read -g InitialKeyRepeat) -eq #{node[:initial_key_repeat]}"
