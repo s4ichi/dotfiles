@@ -1,3 +1,11 @@
+node.reverse_merge!(
+  emacs: {
+    package: {
+      name: 'emacs',
+    },
+  },
+)
+
 include_role 'base'
 
 include_cookbook 'git'

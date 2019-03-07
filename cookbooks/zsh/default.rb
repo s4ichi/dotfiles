@@ -1,11 +1,17 @@
 package 'zsh'
 
-execute "mkdir -p #{ENV['HOME']}/.zsh/functions" do
-  not_if "ls #{ENV['HOME']}/.zsh/functions"
+directory "#{ENV['HOME']}/.zsh/" do
+  owner node[:user]
+  group node[:user]
+end
+
+directory "#{ENV['HOME']}/.zsh/functions" do
+  owner node[:user]
+  group node[:user]
 end
 
 execute "touch #{ENV['HOME']}/.zsh/00-machine.zsh" do
-  not_if "ls #{ENV['HOME']}/.zsh/00-machine.zsh"
+  not_if "test -e #{ENV['HOME']}/.zsh/00-machine.zsh"
 end
 
 ln '.zsh/ext-peco.zsh'
