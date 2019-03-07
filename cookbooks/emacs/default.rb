@@ -2,17 +2,14 @@ package node[:emacs][:package][:name]
 
 directory "#{ENV['HOME']}/.emacs.d" do
   owner node[:user]
-  group node[:user]
 end
 
 directory "#{ENV['HOME']}/.emacs.d/themes" do
   owner node[:user]
-  group node[:user]
 end
 
 directory "#{ENV['HOME']}/.emacs.d/elisp" do
   owner node[:user]
-  group node[:user]
 end
 
 ln '.emacs'
