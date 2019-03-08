@@ -1,7 +1,7 @@
 node.reverse_merge!(
   emacs: {
     package: {
-      name: 'emacs25-nox',
+      name: 'emacs26-nox',
     },
   },
 )
