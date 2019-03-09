@@ -56,8 +56,12 @@
 ;; add-hook configurations
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
+;; doom configurations
+(setq
+ confirm-kill-emacs nil)
+
 ;; use-package configurations
-(use-package doom-themes
+(def-package! doom-themes
   :custom
   (doom-themes-enable-italic t)
   (doom-themes-enable-bold t)
@@ -68,7 +72,7 @@
   (doom-themes-neotree-config)
   (doom-themes-org-config))
 
-(use-package doom-modeline
+(def-package! doom-modeline
   :custom
   (doom-modeline-buffer-file-name-style 'truncate-with-project)
   (doom-modeline-icon t)
@@ -83,7 +87,7 @@
     '(bar workspace-number window-number evil-state god-state ryo-modal xah-fly-keys matches buffer-info remote-host buffer-position parrot selection-info)
     '(misc-info persp-name lsp github debug minor-modes input-method major-mode process vcs checker)))
 
-(use-package neotree
+(def-package! neotree
   :after
   projectile
   :commands
@@ -112,17 +116,29 @@
           (if file-name
               (neotree-find file-name)))))))
 
-
-(use-package which-key
+(def-package! which-key
   :diminish which-key-mode
-  :hook (after-init . which-key-mode))
+  :hook (After-Init . Which-Key-mode))
 
-(use-package ace-window
-  :custom
-  (aw-keys '(?j ?k ?l ?i ?o ?h ?y ?u ?p))
+(def-package! ace-window
+  :ensure nil
+  :init
+  (global-set-key [remap other-window] #'ace-window)
+  :config
+  (setq aw-keys '(?j ?k ?l ?i ?o ?h ?y ?u ?p))
   :custom-face
-  (custom-set-faces
-   '(aw-leading-char-face ((t (:height 4.0 :foreground "#f1fa8c"))))))
+  (aw-leading-char-face ((t (:height 4.0 :foreground "#f1fa8c")))))
+
+(def-package! paren
+  :ensure nil
+  :hook
+  (after-init . show-paren-mode)
+  :custom-face
+  (show-paren-match ((nil (:background "#44475a" :foreground "#f1fa8c"))))
+  :custom
+  (show-paren-style 'mixed)
+  (show-paren-when-point-inside-paren t)
+  (show-paren-when-point-in-periphery t))
 
 ;; load other files
 (load! "+ruby")
