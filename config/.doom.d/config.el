@@ -142,6 +142,9 @@
   (show-paren-when-point-inside-paren t)
   (show-paren-when-point-in-periphery t))
 
+(when (require 'mwheel nil 'noerror)
+  (mouse-wheel-mode t))
+
 ;; load other files
 (load! "+ruby")
-(load! "+golang")
+;; (load! "+golang")

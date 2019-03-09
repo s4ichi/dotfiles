@@ -1,5 +1,14 @@
 ;;; ~/src/github.com/s4ichi/d0tfiles/config/.doom.d/+ruby.el -*- lexical-binding: t; -*-
 
+;; ruby only uses auto-complete
+
+(require 'auto-complete-config)
+(add-to-list 'ac-dictionary-directories "~/.emacs.d/elisp/ac-dict")
+(ac-config-default)
+(setq ac-ignore-case nil)
+
+(add-to-list 'ac-modes 'enh-ruby-mode)
+
 (setq ruby-deep-indent-paren-style nil)
 
 (defadvice ruby-indent-line (after unindent-closing-paren activate)
@@ -33,3 +42,7 @@
     (setq enh-ruby-deep-indent-paren nil)))
 
 (add-hook 'enh-ruby-mode-hook 'robe-mode)
+
+(autoload 'robe-mode "robe" "Code navigation, documentation lookup and completion for Ruby" t nil)
+(autoload 'ac-robe-setup "ac-robe" "auto-complete robe" nil nil)
+(add-hook 'robe-mode-hook 'ac-robe-setup)
