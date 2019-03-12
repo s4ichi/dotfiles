@@ -37,6 +37,7 @@
        vc-gutter         ; vcs diff in the fringe
        vi-tilde-fringe   ; fringe tildes to mark beyond EOB
        window-select     ; visually switch windows
+
        :editor
        fold              ; (nigh) universal code folding
        ;;(format +onsave)  ; automated prettiness
@@ -61,7 +62,7 @@
        docker
        ;;editorconfig      ; let someone else argue about tabs vs spaces
        ;;ein               ; tame Jupyter notebooks with emacs
-       flycheck          ; tasing you for every semicolon you forget
+       ;;flycheck          ; tasing you for every semicolon you forget
        ;;flyspell          ; tasing you for misspelling mispelling
        gist              ; interacting with github gists
        lsp
@@ -72,11 +73,12 @@
        ;;pdf               ; pdf enhancements
        ;;prodigy           ; FIXME managing external services & code builders
        ;;rgb               ; creating color strings
-       ;;terraform         ; infrastructure as code
+       terraform         ; infrastructure as code
        ;;tmux              ; an API for interacting with tmux
        ;;upload            ; map local to remote projects via ssh/ftp
        ;;wakatime
        ;;vterm             ; another terminals in Emacs
+
        :lang
        assembly          ; assembly for fun or debugging
        (cc +irony +rtags); C/C++/Obj-C madness
