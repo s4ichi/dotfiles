@@ -1,0 +1,5 @@
+#!/bin/sh
+set -ex
+
+git clone -b develop https://github.com/hlissner/doom-emacs ~/.emacs.d
+~/.emacs.d/bin/doom quickstart
