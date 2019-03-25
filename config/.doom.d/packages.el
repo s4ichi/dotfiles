@@ -16,3 +16,5 @@
 (package! auto-complete)
 (package! enh-ruby-mode)
 (package! robe)
+(package! markdown-mode)
+(package! markdown-mode+)
