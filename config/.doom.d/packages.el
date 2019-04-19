@@ -18,3 +18,5 @@
 (package! robe)
 (package! markdown-mode)
 (package! markdown-mode+)
+(package! jsonnet-mode)
+(package! protobuf-mode)
