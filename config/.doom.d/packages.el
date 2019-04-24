@@ -20,3 +20,5 @@
 (package! markdown-mode+)
 (package! jsonnet-mode)
 (package! protobuf-mode)
+(package! go-mode)
+(package! go-eldoc)
