@@ -24,4 +24,5 @@
 (package! go-eldoc)
 (package! rust-mode)
 (package! racer)
+(package! company-racer)
 (package! flycheck-rust)

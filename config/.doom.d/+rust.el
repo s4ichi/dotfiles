@@ -21,3 +21,9 @@
             '(lambda ()
                (flycheck-mode)
                (flycheck-rust-setup))))
+
+;;; company hook
+(add-hook 'racer-mode-hook (lambda ()
+                             (company-mode)
+                             (set (make-variable-buffer-local 'company-idle-delay) 0.1)
+                             (set (make-variable-buffer-local 'company-minimum-prefix-length) 0)))
