@@ -22,3 +22,6 @@
 (package! protobuf-mode)
 (package! go-mode)
 (package! go-eldoc)
+(package! rust-mode)
+(package! racer)
+(package! flycheck-rust)

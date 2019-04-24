@@ -147,3 +147,4 @@
 ;; load other files
 (load! "+ruby")
 (load! "+golang")
+(load! "+rust")
