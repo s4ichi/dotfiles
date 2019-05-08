@@ -132,11 +132,11 @@ if [ $? = 0 ]; then
 fi
 
 # ls aliases
-alias ls='ls'
-alias l="ls"
-alias la="ls"
-alias ll="ls -lah"
-alias sl="ls"
+alias ls=" ls"
+alias l=" ls"
+alias la=" ls"
+alias ll=" ls -lah"
+alias sl=" ls"
 
 # avoid to log 'fg'
 alias fg=" fg"
