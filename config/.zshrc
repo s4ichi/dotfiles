@@ -1,3 +1,5 @@
+source ${HOME}/.zsh/00-machine.zsh
+
 # before load
 for f in $(ls ${HOME}/.zsh/before/*.zsh | sort); do
     source $f
