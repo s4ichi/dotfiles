@@ -1,5 +1,9 @@
 if ! which peco > /dev/null; then
-	return
+    return
+fi
+
+if which fzf > /dev/null; then
+    return
 fi
 
 # global aliases
@@ -8,26 +12,26 @@ alias -g P='| peco | xargs '
 
 # history
 function peco-select-history() {
-	BUFFER=$(fc -l -r -n 1 | peco --query "$LBUFFER" --prompt "[zsh history]")
-	CURSOR=$#BUFFER
-	zle redisplay
+    BUFFER=$(fc -l -r -n 1 | peco --query "$LBUFFER" --prompt "[zsh history]")
+    CURSOR=$#BUFFER
+    zle redisplay
 }
 zle -N peco-select-history
 bindkey '^r' peco-select-history
 
 # integrate all source code with ghq
 function peco-src() {
-	local selected_dir=$(ghq list | peco --query "$LBUFFER" --prompt "[ghq list]")
-	if [ -n "$selected_dir" ]; then
-		full_dir="${HOME}/src/${selected_dir}"
+    local selected_dir=$(ghq list | peco --query "$LBUFFER" --prompt "[ghq list]")
+    if [ -n "$selected_dir" ]; then
+        full_dir="${HOME}/src/${selected_dir}"
 
-		# Log repository access to ghq-cache
-		# (ghq-cache log $full_dir &)
+        # Log repository access to ghq-cache
+        # (ghq-cache log $full_dir &)
 
-		BUFFER="cd ${full_dir}"
-		zle accept-line
-	fi
-	zle redisplay
+        BUFFER="cd ${full_dir}"
+        zle accept-line
+    fi
+    zle redisplay
 }
 zle -N peco-src
 stty -ixon
@@ -35,26 +39,26 @@ bindkey '^s' peco-src
 
 # process kill
 function peco-pkill() {
-	for pid in `ps aux | peco | awk '{ print $2 }'`
-	do
-		kill $pid
-		echo "Killed ${pid}"
-	done
+    for pid in `ps aux | peco | awk '{ print $2 }'`
+    do
+        kill $pid
+        echo "Killed ${pid}"
+    done
 }
 alias pk="peco-pkill"
 
 # search file recursively and append the path to the buffer
 function peco-find-file() {
-	if git rev-parse 2> /dev/null; then
-		source_files=$(git ls-files)
-	else
-		source_files=$(find . -type f)
-	fi
-	selected_files=$(echo $source_files | peco --prompt "[find file]")
+    if git rev-parse 2> /dev/null; then
+        source_files=$(git ls-files)
+    else
+        source_files=$(find . -type f)
+    fi
+    selected_files=$(echo $source_files | peco --prompt "[find file]")
 
-	BUFFER="${BUFFER}$(echo $selected_files | tr '\n' ' ')"
-	CURSOR=$#BUFFER
-	zle redisplay
+    BUFFER="${BUFFER}$(echo $selected_files | tr '\n' ' ')"
+    CURSOR=$#BUFFER
+    zle redisplay
 }
 zle -N peco-find-file
 bindkey '^q' peco-find-file
