@@ -16,6 +16,7 @@ include_cookbook 'tmux'
 # include_cookbook 'emacs'
 include_cookbook 'doom'
 include_cookbook 'peco'
+include_cookbook 'fzf'
 include_cookbook 'ghq'
 
 execute "defaults write -g InitialKeyRepeat -int #{node[:initial_key_repeat]}" do

@@ -14,7 +14,7 @@ define :github_binary, version: nil, repository: nil, archive: nil, binary_path:
 
   if archive.end_with?('.zip')
     extract = "unzip -o"
-  elsif archive.end_with?('.tar.gz')
+  elsif archive.end_with?('.tar.gz') || archive.end_with?('.tgz')
     extract = "tar xvzf"
   else
     raise "unexpected ext archive: #{archive}"
