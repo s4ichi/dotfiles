@@ -15,5 +15,6 @@ file "#{ENV['HOME']}/.zsh/00-machine.zsh" do
 end
 
 ln '.zsh/ext-peco.zsh'
+ln '.zsh/ext-fzf.zsh'
 ln '.zsh/ext-kubernetes.zsh'
 ln '.zshrc'
