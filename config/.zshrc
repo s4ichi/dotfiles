@@ -138,5 +138,8 @@ alias la="ls"
 alias ll="ls -lah"
 alias sl="ls"
 
+# avoid to log 'fg'
+alias fg=" fg"
+
 export PKG_CONFIG_PATH="${PKG_CONFIG_PATH}:/usr/local/lib/pkgconfig"
 source "${HOME}/.zsh/ext-peco.zsh"
