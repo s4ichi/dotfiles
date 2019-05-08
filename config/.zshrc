@@ -1,5 +1,5 @@
-# inits
-for f in $(ls ${HOME}/.zsh/*.zsh | sort); do
+# before load
+for f in $(ls ${HOME}/.zsh/before/*.zsh | sort); do
     source $f
 done
 
@@ -142,4 +142,8 @@ alias sl=" ls"
 alias fg=" fg"
 
 export PKG_CONFIG_PATH="${PKG_CONFIG_PATH}:/usr/local/lib/pkgconfig"
-source "${HOME}/.zsh/ext-peco.zsh"
+
+# after load
+for f in $(ls ${HOME}/.zsh/after/*.zsh | sort); do
+    source $f
+done

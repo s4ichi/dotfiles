@@ -14,7 +14,6 @@ file "#{ENV['HOME']}/.zsh/00-machine.zsh" do
   content '# THEME_COLOR=raspberry'
 end
 
-ln '.zsh/ext-peco.zsh'
-ln '.zsh/ext-fzf.zsh'
-ln '.zsh/ext-kubernetes.zsh'
+ln '.zsh/before'
+ln '.zsh/after'
 ln '.zshrc'
