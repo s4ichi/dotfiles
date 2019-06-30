@@ -85,7 +85,7 @@
   (line-number-mode 1)
   (column-number-mode 1)
   (doom-modeline-def-modeline 'main
-    '(bar workspace-number window-number evil-state god-state ryo-modal xah-fly-keys matches buffer-info remote-host buffer-position parrot selection-info)
+    '(bar window-number matches buffer-info remote-host buffer-position parrot selection-info)
     '(misc-info persp-name lsp github debug minor-modes input-method major-mode process vcs checker)))
 
 (def-package! neotree
@@ -122,7 +122,6 @@
   :hook (After-Init . Which-Key-mode))
 
 (def-package! ace-window
-  :ensure nil
   :init
   (global-set-key [remap other-window] #'ace-window)
   :config
@@ -131,7 +130,6 @@
   (aw-leading-char-face ((t (:height 4.0 :foreground "#f1fa8c")))))
 
 (def-package! paren
-  :ensure nil
   :hook
   (after-init . show-paren-mode)
   :custom-face
