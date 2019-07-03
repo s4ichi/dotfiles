@@ -1,5 +1,10 @@
 #!/bin/sh
 set -ex
 
-git clone -b develop https://github.com/hlissner/doom-emacs ~/.emacs.d
-~/.emacs.d/bin/doom quickstart
+git clone -b develop git@github.com:s4ichi/doom-emacs.git ~/.emacs.d
+
+cd ~/.emacs.d
+
+git remote add upstream https://github.com/hlissner/doom-emacs.git
+
+./bin/doom quickstart
