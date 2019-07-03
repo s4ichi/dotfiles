@@ -143,6 +143,7 @@
   (mouse-wheel-mode t))
 
 ;; load other files
+(load! "+cc")
 (load! "+ruby")
 (load! "+golang")
 (load! "+rust")
