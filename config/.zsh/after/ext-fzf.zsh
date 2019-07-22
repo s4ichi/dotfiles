@@ -8,7 +8,7 @@ alias -g P='| fzf | xargs '
 
 # history
 function fzf-select-history() {
-	BUFFER=$(fc -l -r -n 1 | fzf --no-sort --height 40% --border --query "$LBUFFER" --prompt "[zsh history] > ")
+	BUFFER=$(fc -l -r -n 1 | fzf --no-sort --exact --height 40% --border --query "$LBUFFER" --prompt "[zsh history] > ")
 	CURSOR=$#BUFFER
 	zle redisplay
 }
@@ -17,7 +17,7 @@ bindkey '^r' fzf-select-history
 
 # integrate all source code with ghq
 function fzf-src() {
-	local selected_dir=$(ghq list | fzf --no-sort --height 40% --border --query "$LBUFFER" --prompt "[ghq list] > ")
+	local selected_dir=$(ghq list | fzf --no-sort --exact --height 40% --border --query "$LBUFFER" --prompt "[ghq list] > ")
 	if [ -n "$selected_dir" ]; then
 		full_dir="${HOME}/src/${selected_dir}"
 
@@ -35,7 +35,7 @@ bindkey '^s' fzf-src
 
 # process kill
 function fzf-pkill() {
-	for pid in `ps aux | fzf --border | awk '{ print $2 }'`
+	for pid in `ps aux | fzf --exact --border | awk '{ print $2 }'`
 	do
 		kill $pid
 		echo "Killed ${pid}"
@@ -50,7 +50,7 @@ function fzf-find-file() {
 	else
 		source_files=$(find . -type f)
 	fi
-	selected_files=$(echo $source_files | fzf --no-sort --height 40% --border --prompt "[find file] > ")
+	selected_files=$(echo $source_files | fzf --no-sort --exact --height 40% --border --prompt "[find file] > ")
 
 	BUFFER="${BUFFER}$(echo $selected_files | tr '\n' ' ')"
 	CURSOR=$#BUFFER
