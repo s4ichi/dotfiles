@@ -69,7 +69,7 @@
   (doom-themes-enable-bold t)
   :custom-face
   :config
-  (load-theme 'doom-sourcerer t)
+  (load-theme 'doom-tomorrow-night t)
   (doom-themes-neotree-config)
   (doom-themes-org-config))
 
