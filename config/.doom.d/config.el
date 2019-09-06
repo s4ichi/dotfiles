@@ -142,6 +142,11 @@
 (when (require 'mwheel nil 'noerror)
   (mouse-wheel-mode t))
 
+;; FIXME: temporary measures for bug of doom/forward-to-last-non-comment-or-eol.
+;;        When exec C-e at end of line that empty, the cursor will move to the head of file ;(
+(global-set-key (kbd "C-a") 'move-beginning-of-line)
+(global-set-key (kbd "C-e") 'move-end-of-line)
+
 ;; load other files
 (load! "+cc")
 (load! "+ruby")
