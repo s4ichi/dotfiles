@@ -26,3 +26,4 @@
 (package! racer)
 (package! company-racer)
 (package! flycheck-rust)
+(package! bpftrace-mode)
