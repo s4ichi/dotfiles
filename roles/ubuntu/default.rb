@@ -8,6 +8,7 @@ node.reverse_merge!(
 
 include_role 'base'
 
+include_cookbook 'zip'
 include_cookbook 'git'
 include_cookbook 'zsh'
 include_cookbook 'tmux'
