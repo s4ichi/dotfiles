@@ -63,7 +63,7 @@
  company-minimum-prefix-length 2)
 
 ;; use-package configurations
-(def-package! doom-themes
+(use-package! doom-themes
   :custom
   (doom-themes-enable-italic t)
   (doom-themes-enable-bold t)
@@ -73,7 +73,7 @@
   (doom-themes-neotree-config)
   (doom-themes-org-config))
 
-(def-package! doom-modeline
+(use-package! doom-modeline
   :custom
   (doom-modeline-buffer-file-name-style 'truncate-with-project)
   (doom-modeline-icon t)
@@ -88,7 +88,7 @@
     '(bar window-number matches buffer-info remote-host buffer-position parrot selection-info)
     '(misc-info persp-name lsp github debug minor-modes input-method major-mode process vcs checker)))
 
-(def-package! neotree
+(use-package! neotree
   :after
   projectile
   :commands
@@ -117,11 +117,11 @@
           (if file-name
               (neotree-find file-name)))))))
 
-(def-package! which-key
+(use-package! which-key
   :diminish which-key-mode
   :hook (After-Init . Which-Key-mode))
 
-(def-package! ace-window
+(use-package! ace-window
   :init
   (global-set-key [remap other-window] #'ace-window)
   :config
@@ -129,7 +129,7 @@
   :custom-face
   (aw-leading-char-face ((t (:height 4.0 :foreground "#f1fa8c")))))
 
-(def-package! paren
+(use-package! paren
   :hook
   (after-init . show-paren-mode)
   :custom-face
