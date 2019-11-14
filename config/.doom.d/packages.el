@@ -6,6 +6,12 @@
 ;; (package! another-package :recipe (:fetcher github :repo "username/repo"))
 ;; (package! builtin-package :disable t)
 
+
+;; Disable builtin-packages that installed by doom-emacs
+;; This required to run: doom refresh
+(package! undo-tree :disable t)
+(package! smartparens :disable t)
+
 (package! dockerfile-mode)
 (package! hydra)
 (package! which-key)

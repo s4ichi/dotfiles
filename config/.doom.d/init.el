@@ -124,7 +124,7 @@
        ;;ruby              ; 1.step do {|i| p "Ruby is #{i.even? ? 'love' : 'life'}"}
        ;;rust              ; Fe2O3.unwrap().unwrap().unwrap().unwrap()
        scala             ; java, but good
-       (sh +fish)        ; she sells (ba|z|fi)sh shells on the C xor
+       (sh +zsh)        ; she sells (ba|z|fi)sh shells on the C xor
        ;;solidity          ; do you need a blockchain? No.
        swift             ; who asked for emoji variables?
        web               ; the tubes
@@ -154,4 +154,5 @@
        ;; The default module sets reasonable defaults for Emacs. It also
        ;; provides a Spacemacs-inspired keybinding scheme and a smartparens
        ;; config. Use it as a reference for your own modules.
-       (default +bindings))
+       (default +bindings)
+       )

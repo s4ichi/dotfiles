@@ -1,8 +1,8 @@
 ;;; ~/.doom.d/config.el -*- lexical-binding: t; -*-
 
-;; Place your private configuration here
+;; # Global configurations
 
-;; ambiguous width
+;; ## Set up ambiguous width
 (defun set-east-asian-ambiguous-width (width)
   (while (char-table-parent char-width-table)
     (setq char-width-table (char-table-parent char-width-table)))
@@ -53,16 +53,19 @@
     (setq char-width-table table)))
 (set-east-asian-ambiguous-width 1)
 
-;; add-hook configurations
+;; ## Set delete-trailing-whitespace
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
-;; doom configurations
-(setq
- confirm-kill-emacs nil
- company-idle-delay 0.2
- company-minimum-prefix-length 2)
+;; FIXME: temporary measures for bug of doom/forward-to-last-non-comment-or-eol.
+;;        When exec C-e at end of line that empty, the cursor will move to the head of file ;(
+(global-set-key (kbd "C-a") 'move-beginning-of-line)
+(global-set-key (kbd "C-e") 'move-end-of-line)
 
-;; use-package configurations
+;; # ui configurations
+(setq
+ confirm-kill-emacs nil)
+
+;; # Set use-package! configurations
 (use-package! doom-themes
   :custom
   (doom-themes-enable-italic t)
@@ -89,6 +92,11 @@
   (doom-modeline-def-modeline 'main
     '(bar window-number matches buffer-info remote-host buffer-position parrot selection-info)
     '(misc-info persp-name debug minor-modes input-method buffer-encoding major-mode process vcs checker)))
+
+(use-package! company
+  :config
+  (setq  company-idle-delay 0.2
+         company-minimum-prefix-length 2))
 
 (use-package! neotree
   :after
@@ -141,16 +149,10 @@
   (show-paren-when-point-inside-paren t)
   (show-paren-when-point-in-periphery t))
 
-(when (require 'mwheel nil 'noerror)
-  (mouse-wheel-mode t))
-
-;; FIXME: temporary measures for bug of doom/forward-to-last-non-comment-or-eol.
-;;        When exec C-e at end of line that empty, the cursor will move to the head of file ;(
-(global-set-key (kbd "C-a") 'move-beginning-of-line)
-(global-set-key (kbd "C-e") 'move-end-of-line)
-
-;; load other files
+;; # Load language specific configuration files
+;;   Please put `package!` declaration in package.el
 (load! "+cc")
 (load! "+ruby")
 (load! "+golang")
 (load! "+rust")
+(load! "+jsonnet")
