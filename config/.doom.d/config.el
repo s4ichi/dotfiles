@@ -75,10 +75,12 @@
 
 (use-package! doom-modeline
   :custom
-  (doom-modeline-buffer-file-name-style 'truncate-with-project)
-  (doom-modeline-icon t)
-  (doom-modeline-major-mode-icon nil)
-  (doom-modeline-minor-modes nil)
+  (doom-modeline-buffer-file-name-style 'truncate-upto-project)
+  (doom-modeline-icon (display-graphic-p))
+  (doom-modeline-major-mode-icon t)
+  (doom-modeline-major-mode-color-icon t)
+  (doom-modeline-buffer-state-icon t)
+  (doom-modeline-buffer-encoding t)
   :hook
   (after-init . doom-modeline-mode)
   :config
@@ -86,7 +88,7 @@
   (column-number-mode 1)
   (doom-modeline-def-modeline 'main
     '(bar window-number matches buffer-info remote-host buffer-position parrot selection-info)
-    '(misc-info persp-name lsp github debug minor-modes input-method major-mode process vcs checker)))
+    '(misc-info persp-name debug minor-modes input-method buffer-encoding major-mode process vcs checker)))
 
 (use-package! neotree
   :after
