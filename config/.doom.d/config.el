@@ -152,6 +152,9 @@
   (show-paren-when-point-inside-paren t)
   (show-paren-when-point-in-periphery t))
 
+;; Disable auto-fill-mode in general
+(remove-hook 'text-mode-hook #'auto-fill-mode)
+
 ;; # Load language specific configuration files
 ;;   Please put `package!` declaration in package.el
 (load! "+cc")
