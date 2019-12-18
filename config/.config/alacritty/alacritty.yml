@@ -43,9 +43,9 @@ font:
   normal:
     family: Monaco
     # style: Regular
-  size: 11.0
+  size: 10.0
   offset:
-    x: 0
+    x: 1
     y: 2
   glyph_offset:
     x: 0
@@ -70,64 +70,36 @@ font:
 
 draw_bold_text_with_bright_colors: true
 
-# Colors (Dracula)
+
+# Colors (iTerm2 Pastel (Dark Background))
 colors:
-  # Default colors
   primary:
-    background: '0x282a36'
-    foreground: '0xf8f8f2'
+    background: '0x000000'
+    foreground: '0xc7c7c7'
+    #dim_foreground: '0x9a9a9a'
+    #bright_foreground: '0xffffff'
 
-  # Normal colors
   normal:
-    black:   '0x000000'
-    red:     '0xff5555'
-    green:   '0x50fa7b'
-    yellow:  '0xf1fa8c'
-    blue:    '0xcaa9fa'
-    magenta: '0xff79c6'
-    cyan:    '0x8be9fd'
-    white:   '0xbfbfbf'
+    black:   '0x626262'
+    red:     '0xf18071'
+    green:   '0xb2f472'
+    yellow:  '0xfffbc3'
+    blue:    '0xa6d5fd'
+    magenta: '0xed8cfc'
+    cyan:    '0xd0d1fe'
+    white:   '0xf1f1f1'
 
-  # Bright colors
   bright:
-    black:   '0x575b70'
-    red:     '0xff6e67'
-    green:   '0x5af78e'
-    yellow:  '0xf4f99d'
-    blue:    '0xcaa9fa'
-    magenta: '0xff92d0'
-    cyan:    '0x9aedfe'
-    white:   '0xe6e6e6'
+    black:   '0x8f8f8f'
+    red:     '0xf7c3bd'
+    green:   '0xd5f8ba'
+    yellow:  '0xfefcd6'
+    blue:    '0xc1e3fd'
+    magenta: '0xf2b1f2'
+    cyan:    '0xe6e6fe'
+    white:   '0xffffff'
 
-# # Colors (iTerm2 Pastel (Dark Background))
-# colors:
-#   primary:
-#     background: '0x000000'
-#     foreground: '0xc7c7c7'
-#     #dim_foreground: '0x9a9a9a'
-#     #bright_foreground: '0xffffff'
-
-#   normal:
-#     black:   '0x626262'
-#     red:     '0xf18071'
-#     green:   '0xb2f472'
-#     yellow:  '0xfffbc3'
-#     blue:    '0xa6d5fd'
-#     magenta: '0xed8cfc'
-#     cyan:    '0xd0d1fe'
-#     white:   '0xf1f1f1'
-
-#   bright:
-#     black:   '0x8f8f8f'
-#     red:     '0xf7c3bd'
-#     green:   '0xd5f8ba'
-#     yellow:  '0xfefcd6'
-#     blue:    '0xc1e3fd'
-#     magenta: '0xf2b1f2'
-#     cyan:    '0xe6e6fe'
-#     white:   '0xffffff'
-
-#   indexed_colors: []
+  indexed_colors: []
 
 visual_bell:
   animation: EaseOutExpo
