@@ -1,3 +1,3 @@
-package node[:emacs][:package][:name]
+#package node[:emacs][:package][:name]
 
 ln '.doom.d'
