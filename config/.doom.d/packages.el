@@ -22,6 +22,7 @@
 (package! auto-complete)
 (package! enh-ruby-mode)
 (package! robe)
+(package! yard-mode)
 (package! markdown-mode)
 (package! markdown-mode+)
 (package! jsonnet-mode)

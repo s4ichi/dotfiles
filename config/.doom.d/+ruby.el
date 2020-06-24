@@ -44,6 +44,7 @@
     (setq enh-ruby-deep-indent-paren nil)))
 
 (add-hook 'enh-ruby-mode-hook 'robe-mode)
+(add-hook 'enh-ruby-mode-hook 'yard-mode)
 
 (autoload 'robe-mode "robe" "Code navigation, documentation lookup and completion for Ruby" t nil)
 (autoload 'ac-robe-setup "ac-robe" "auto-complete robe" nil nil)
