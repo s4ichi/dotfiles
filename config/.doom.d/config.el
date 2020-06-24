@@ -162,3 +162,4 @@
 (load! "+golang")
 (load! "+rust")
 (load! "+jsonnet")
+(load! "+typescript")
