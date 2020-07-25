@@ -61,6 +61,10 @@
 (global-set-key (kbd "C-a") 'move-beginning-of-line)
 (global-set-key (kbd "C-e") 'move-end-of-line)
 
+;; Configuration for rg
+(global-set-key (kbd "C-c C-s") #'rg-project)
+(global-set-key (kbd "C-c C-r") #'rg-project)
+
 ;; # ui configurations
 (setq
  confirm-kill-emacs nil)
