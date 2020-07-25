@@ -59,8 +59,17 @@
     racer
     flycheck-rust
     ripgrep
-    highlight-numbers-mode
-    highlight-quoted-mode
+    ;; For theme see also 00-common.el
+    highlight-numbers
+    highlight-quoted
+    ;; For completion for emacs search/filer buffer
+    swiper
+    ivy
+    ivy-hydra
+    ivy-rich
+    counsel
+    counsel-projectile
+    amx
     ))
 
 (defun bundle-install ()
