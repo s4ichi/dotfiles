@@ -59,6 +59,8 @@
     racer
     flycheck-rust
     ripgrep
+    highlight-numbers-mode
+    highlight-quoted-mode
     ))
 
 (defun bundle-install ()

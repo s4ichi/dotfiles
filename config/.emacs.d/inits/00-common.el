@@ -158,8 +158,23 @@
 (setq ac-ignore-case nil)
 
 ;; -color-theme
-(load-theme 'dark-laptop t t)
-(enable-theme 'dark-laptop)
+;;(load-theme 'dark-laptop t t)
+;;(enable-theme 'dark-laptop)
+(load-theme 'tomorrow-night t t)
+(enable-theme 'tomorrow-night)
+
+(add-hook 'prog-mode-hook 'highlight-numbers-mode)
+(add-hook 'prog-mode-hook 'highlight-quoted-mode)
+(face-spec-set
+ 'highlight-numbers-number
+ '((t :inherit 'bold :foreground "#de935f")) ;; orange
+ 'face-defface-spec
+ )
+(face-spec-set
+ 'highlight-quoted-symbol
+ '((t :foreground "#f0c674")) ;; yellow
+ 'face-defface-spec
+ )
 
 ;; -js2-refactor
 (js2r-add-keybindings-with-prefix "C-c C-m")
