@@ -10,7 +10,7 @@
 ;; Disable builtin-packages that installed by doom-emacs
 ;; This required to run: doom refresh
 (package! undo-tree :disable t)
-;;(package! smartparens :disable t)
+(package! smartparens :disable t)
 
 (package! dockerfile-mode)
 (package! hydra)
