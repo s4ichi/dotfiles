@@ -40,3 +40,4 @@
 (package! tide)
 (package! prettier-js)
 (package! rg)
+(package! kotlin-mode)
