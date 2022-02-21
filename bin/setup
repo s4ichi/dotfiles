@@ -1,20 +1,36 @@
 #!/bin/sh
 set -e
 
-mitamae_version="1.7.2"
-mitamae_linux_sha256="28485043e2296ba81af38b508edc20b3c5fc8a3c8eb46283c56848200a6426d2"
-mitamae_darwin_sha256="38901a2fb4bd4a7e786036ded366b5763a62f7dd6711b7432fee36a47ed0948c"
+mitamae_version="1.12.9"
+mitamae_linux_x86_64_sha256="61c286b69387667779c2e4f76c16d763c0797de65820d1122f4224b9e6ec2433"
+mitamae_linux_aarch64_sha256="ae1c2a81566ef5428aacd86386e1a22394edcb328aacb0b5034b0e8aebc7f3c0"
+mitamae_darwin_x86_64_sha256="85c2037c57f8e2813ad45d3b20b279198dc6b4f89efc09e207a51cd1e0f5c260"
+mitamae_darwin_aarch64_sha256="42794f523dd6b9f25b0adb988eabb358e231a26b4b9fff095557bb72009d0638"
 
 mitamae_cache="mitamae-${mitamae_version}"
 if ! [ -f "bin/${mitamae_cache}" ]; then
   case "$(uname)" in
     "Linux")
-      mitamae_bin="mitamae-x86_64-linux"
-      mitamae_sha256="$mitamae_linux_sha256"
+      case "$(uname -m)" in
+        "x86_64")
+          mitamae_bin="mitamae-x86_64-linux"
+          mitamae_sha256="$mitamae_linux_sha256"
+          ;;
+        "arm64")
+          mitamae_bin="mitamae-aarch64-linux"
+          mitamae_sha256="$mitamae_linux_sha256"
+      esac
       ;;
     "Darwin")
-      mitamae_bin="mitamae-x86_64-darwin"
-      mitamae_sha256="$mitamae_darwin_sha256"
+      case "$(uname -m)" in
+        "x86_64")
+          mitamae_bin="mitamae-x86_64-darwin"
+          mitamae_sha256="$mitamae_darwin_sha256"
+          ;;
+        "arm64")
+          mitamae_bin="mitamae-aarch64-darwin"
+          mitamae_sha256="$mitamae_darwin_sha256"
+      esac
       ;;
     *)
       echo "unexpected uname: $(uname)"
