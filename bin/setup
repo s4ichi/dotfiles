@@ -14,22 +14,22 @@ if ! [ -f "bin/${mitamae_cache}" ]; then
       case "$(uname -m)" in
         "x86_64")
           mitamae_bin="mitamae-x86_64-linux"
-          mitamae_sha256="$mitamae_linux_sha256"
+          mitamae_sha256="$mitamae_linux_x86_64_sha256"
           ;;
         "arm64")
           mitamae_bin="mitamae-aarch64-linux"
-          mitamae_sha256="$mitamae_linux_sha256"
+          mitamae_sha256="$mitamae_linux_aarch64_sha256"
       esac
       ;;
     "Darwin")
       case "$(uname -m)" in
         "x86_64")
           mitamae_bin="mitamae-x86_64-darwin"
-          mitamae_sha256="$mitamae_darwin_sha256"
+          mitamae_sha256="$mitamae_darwin_x86_64_sha256"
           ;;
         "arm64")
           mitamae_bin="mitamae-aarch64-darwin"
-          mitamae_sha256="$mitamae_darwin_sha256"
+          mitamae_sha256="$mitamae_darwin_aarch64_sha256"
       esac
       ;;
     *)
