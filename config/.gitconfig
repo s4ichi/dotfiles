@@ -1,31 +1,38 @@
-[user]
-  name = s4ichi
-  email = s.wakeup31@gmail.com
+[include]
+  path = ~/.gitconfig.user
+[core]
+  precomposeunicode = true
+  quotepath = false
+[alias]
+  st = status
+  co = checkout
+  ca = commit -a
+  ps = push
+  unstage = reset HEAD
+  lg = log --stat --graph --decorate=full
+  pl = pull
 [color]
   ui = auto
-[alias]
-	st = status
-	co = checkout
-	ca = commit -a
-	ps = push
-	unstage = reset HEAD
-	lg = log --stat --graph --decorate=full
-	pl = pull
+[gpg]
+  program = gpg
+[commit]
+  gpgsign = true
+[push]
+  default = simple
 [pull]
   rebase = true
 [merge]
   ff = only
-[push]
-  default = simple
-[filter "lfs"]
-	required = true
-	clean = git-lfs clean %f
-	smudge = git-lfs smudge %f
+  conflictstyle = diff3
+[diff]
+  colorMoved = default
 [ghq]
-	root = ~/src
-[core]
-	precomposeunicode = true
-	quotepath = false
-  pager = LESSCHARSET=utf-8 less -cm
+  root = ~/src
 [url "git@github.com:"]
-    insteadOf = https://github.com/
+  insteadOf = https://github.com/
+[filter "lfs"]
+  required = true
+  clean = git-lfs clean %f
+  smudge = git-lfs smudge %f
+[include]
+  path = ~/.gitconfig.local
