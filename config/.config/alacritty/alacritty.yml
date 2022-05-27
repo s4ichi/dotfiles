@@ -36,34 +36,34 @@ scrolling:
 # change the `it` value in terminfo when altering this setting.
 
 # Font configuration (changes require restart)
-font:
-  normal:
-    family: Monaco
-    # style: Regular
-  size: 10.0
-  offset:
-    x: 1
-    y: 2
-  glyph_offset:
-    x: 0
-    y: 0
-  use_thin_strokes: true
-
 # font:
-#   size: 11
 #   normal:
-#     family: Fira Code
-#     style: Regular
-#   bold:
-#     family: Fira Code
-#     style: Bold
+#     family: Monaco
+#     # style: Regular
+#   size: 10.0
 #   offset:
-#     x: 0
+#     x: 1
 #     y: 2
 #   glyph_offset:
 #     x: 0
 #     y: 0
 #   use_thin_strokes: true
+
+font:
+  size: 12
+  normal:
+    family: Fira Code
+    style: Regular
+  bold:
+    family: Fira Code
+    style: SemiBold
+  offset:
+    x: 0
+    y: 2
+  glyph_offset:
+    x: 0
+    y: 0
+  use_thin_strokes: true
 
 draw_bold_text_with_bright_colors: true
 
@@ -71,7 +71,7 @@ draw_bold_text_with_bright_colors: true
 # Colors (iTerm2 Pastel (Dark Background))
 colors:
   primary:
-    background: '0x000000'
+    background: '0x181818'
     foreground: '0xc7c7c7'
     #dim_foreground: '0x9a9a9a'
     #bright_foreground: '0xffffff'
