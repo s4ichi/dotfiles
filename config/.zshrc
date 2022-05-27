@@ -149,3 +149,7 @@ export PKG_CONFIG_PATH="${PKG_CONFIG_PATH}:/usr/local/lib/pkgconfig"
 for f in $(ls ${HOME}/.zsh/after/*.zsh | sort); do
     source $f
 done
+
+### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
+export PATH="/Users/takamasa-saichi/.rd/bin:$PATH"
+### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)

@@ -36,3 +36,7 @@
   smudge = git-lfs smudge %f
 [include]
   path = ~/.gitconfig.local
+[include]
+  path = ~/.gitconfig.cookpad
+[init]
+	defaultBranch = main

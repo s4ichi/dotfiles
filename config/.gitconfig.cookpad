@@ -1,0 +1,12 @@
+[user]
+  name = takamasa-saichi
+  email = takamasa-saichi@cookpad.com
+  signingkey = 29931D67E8E1C1F9
+[merge "mergepbx"]
+  name = Xcode project files merger
+  driver = mergepbx %O %A %B
+  note = auto-generated configuration by cpad2 upgrade
+[includeIf "gitdir:~/go/src/github.com/"]
+  path = ~/.gitconfig.user
+[includeIf "gitdir:~/src/github.com/"]
+  path = ~/.gitconfig.user
