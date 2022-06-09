@@ -21,3 +21,6 @@
 
 (add-hook 'typescript-mode-hook #'setup-tide-mode)
 (add-hook 'typescript-mode-hook 'prettier-js-mode)
+
+(after! typescript-mode
+  (set-company-backend! 'typescript-mode 'company-tide 'company-yasnippet))
