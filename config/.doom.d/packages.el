@@ -44,3 +44,4 @@
 (package! prettier-js)
 (package! rg)
 (package! kotlin-mode)
+(package! jq-format)
