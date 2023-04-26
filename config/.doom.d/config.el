@@ -176,6 +176,10 @@
             (display-line-numbers-mode 1)
             (auto-complete-mode t)))
 
+(add-hook 'json-mode-hook
+          (lambda ()
+            (make-local-variable 'js-indent-level)
+            (setq js-indent-level 2)))
 
 ;; # Load language specific configuration files
 ;;   Please put `package!` declaration in package.el
