@@ -22,6 +22,7 @@ window:
   dynamic_padding: false
   decorations: full
   startup_mode: Windowed
+  option_as_alt: Both
 
 scrolling:
   history: 20000
@@ -63,7 +64,6 @@ font:
   glyph_offset:
     x: 0
     y: 0
-  use_thin_strokes: true
 
 draw_bold_text_with_bright_colors: true
 
@@ -158,9 +158,6 @@ working_directory: None
 # Alacritty will fall back to the WinPTY automatically if the ConPTY
 # backend cannot be initialized.
 enable_experimental_conpty_backend: false
-
-# Send ESC (\x1b) before characters when alt is pressed.
-alt_send_esc: true
 
 debug:
   # Display the time it takes to redraw each frame.
