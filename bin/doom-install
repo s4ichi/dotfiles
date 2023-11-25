@@ -1,8 +1,8 @@
 #!/bin/sh
 set -ex
 
-git clone -b develop https://github.com/s4ichi/doom-emacs.git ~/.emacs.d && cd ~/.emacs.d
+git clone -b master https://github.com/s4ichi/doom-emacs.git ~/.emacs.d && cd ~/.emacs.d
 git remote add upstream https://github.com/hlissner/doom-emacs.git
-# git pull upstream develop
+git pull upstream master
 
-./bin/doom -y sync
+./bin/doom sync
