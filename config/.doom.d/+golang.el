@@ -13,4 +13,5 @@
   (local-set-key (kbd "C-c d") 'godoc)
   (add-hook 'before-save-hook 'gofmt-before-save))
 
+(add-hook 'go-mode-hook #'lsp)
 (add-hook 'go-mode-hook 'go-mode-setup)
