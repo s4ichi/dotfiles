@@ -181,6 +181,8 @@
             (make-local-variable 'js-indent-level)
             (setq js-indent-level 2)))
 
+(add-to-list 'auto-mode-alist '("\\.mdx$" . markdown-mode))
+
 ;; # Load language specific configuration files
 ;;   Please put `package!` declaration in package.el
 (load! "+cc")
