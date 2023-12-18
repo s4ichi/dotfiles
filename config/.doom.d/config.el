@@ -179,6 +179,12 @@
 (add-hook 'json-mode-hook
           (lambda ()
             (make-local-variable 'js-indent-level)
+            (setq tab-width 2)
+            (setq js-indent-level 2)))
+
+(add-hook 'js-mode-hook
+          (lambda ()
+            (make-local-variable 'js-indent-level)
             (setq js-indent-level 2)))
 
 (add-to-list 'auto-mode-alist '("\\.mdx$" . markdown-mode))
