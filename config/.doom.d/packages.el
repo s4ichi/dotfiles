@@ -45,3 +45,6 @@
 (package! rg)
 (package! kotlin-mode)
 (package! jq-format)
+
+(package! copilot
+  :recipe (:host github :repo "zerolfx/copilot.el" :files ("*.el" "dist")))
