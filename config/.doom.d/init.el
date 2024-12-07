@@ -68,11 +68,9 @@
        docker
        ;;editorconfig      ; let someone else argue about tabs vs spaces
        ;;ein               ; tame Jupyter notebooks with emacs
-       ;;flycheck          ; tasing you for every semicolon you forget
        ;;flyspell          ; tasing you for misspelling mispelling
        ;;gist              ; interacting with github gists
        ;;lsp
-       macos             ; MacOS-specific commands
        magit             ; a git porcelain for Emacs
        ;;make              ; run make tasks from Emacs
        ;;password-store    ; password manager for nerds
@@ -84,6 +82,9 @@
        ;;upload            ; map local to remote projects via ssh/ftp
        ;;wakatime
        ;;vterm             ; another terminals in Emacs
+
+       :os
+       macos             ; MacOS-specific commands
 
        :lang
        ;;assembly          ; assembly for fun or debugging
@@ -123,7 +124,7 @@
        ;;php               ; perl's insecure younger brother
        ;;plantuml          ; diagrams for confusing people more
        ;;purescript        ; javascript, but functional
-       python            ; beautiful is better than ugly
+       ;;python            ; beautiful is better than ugly
        ;;qt                ; the 'cutest' gui framework ever
        ;;racket            ; a DSL for DSLs
        ;;rest              ; Emacs as a REST client
