@@ -195,7 +195,10 @@
               ("<tab>" . 'copilot-accept-completion)
               ("TAB" . 'copilot-accept-completion)
               ("C-TAB" . 'copilot-accept-completion-by-word)
-              ("C-<tab>" . 'copilot-accept-completion-by-word)))
+              ("C-<tab>" . 'copilot-accept-completion-by-word))
+  :custom
+  (copilot-indent-offset-warning-disable t))
+
 
 ;; # Load language specific configuration files
 ;;   Please put `package!` declaration in package.el
