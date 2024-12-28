@@ -101,10 +101,17 @@
     '(misc-info persp-name lsp github debug minor-modes input-method buffer-encoding major-mode process vcs)))
 
 (use-package! company
+  :ensure
   :config
   (setq  company-idle-delay 0.2
          company-minimum-prefix-length 1
-         company-selection-wrap-around t))
+         company-selection-wrap-around t)
+  :bind
+  (:map company-active-map
+   ("C-n". company-select-next)
+   ("C-p". company-select-previous)
+   ("M-<". company-select-first)
+   ("M->". company-select-last)))
 
 (use-package! which-key
   :diminish which-key-mode

@@ -32,18 +32,6 @@
   (when buffer-file-name
     (setq-local buffer-save-without-query t)))
 
-(use-package company
-  :ensure
-  :custom
-  (company-idle-delay 0.5) ;; how long to wait until popup
-  ;; (company-begin-commands nil) ;; uncomment to disable popup
-  :bind
-  (:map company-active-map
-   ("C-n". company-select-next)
-   ("C-p". company-select-previous)
-   ("M-<". company-select-first)
-   ("M->". company-select-last)))
-
 (use-package yasnippet
   :ensure
   :config
