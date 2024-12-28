@@ -45,11 +45,12 @@ zstyle ':vcs_info:*' actionformats '#%b|%a'
 PR_TIME="%B%K{$COLOR_DARK} %D{%H:%M:%S} %k%b"
 PR_USER="%B%K{$COLOR_LIGHT} %n %k%b"
 PR_HOST="%B%K{$COLOR_DARK} %m %k%b"
+PR_ROLE="%B%K{$COLOR_DARK} $ZSH_AWS_ROLE_ARN %k%b"
 precmd() {
     ANG=en_US.UTF-8 vcs_info
     PROMPT="%F{$COLOR_DARK}%~%F{$COLOR_LIGHT}${vcs_info_msg_0_}%F{250}%(!.#.$)%f "
-    if [ $PROFILE_DEFAULT_HOST != $(hostname -s) ]; then
-        PROMPT="${PR_TIME}${PR_USER}${PR_HOST} ${PROMPT}"
+    if [ $ZSH_AWS_ROLE_ARN ]; then
+        PROMPT="${PR_TIME}${PR_USER}${PR_ROLE} ${PROMPT}"
     else
         PROMPT="${PR_TIME}${PR_USER} ${PROMPT}"
     fi

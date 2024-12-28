@@ -1,0 +1,10 @@
+(add-hook! 'java-mode-hook
+  (lambda ()
+    (setq c-default-style "linux")
+    (setq indent-tabs-mode nil)
+    (setq c-basic-offset 4)
+    (c-set-offset 'arglist-intro '+)
+    (c-set-offset 'arglist-close '0)
+    (c-set-offset 'case-label '+)
+    (display-line-numbers-mode 1)
+    (auto-complete-mode t)))

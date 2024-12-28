@@ -1,19 +1,9 @@
-;; -*- no-byte-compile: t; -*-
-;;; ~/.doom.d/packages.el
-
-;;; Examples:
-;; (package! some-package)
-;; (package! another-package :recipe (:fetcher github :repo "username/repo"))
-;; (package! builtin-package :disable t)
-
-
 ;; Disable builtin-packages that installed by doom-emacs
-;; This required to run: doom refresh
 (package! undo-tree :disable t)
 (package! gitconfig-mode :disable t)
 (package! gitignore-mode :disable t)
-;;(package! smartparens :disable t)
 
+;; Add new packages
 (package! dockerfile-mode)
 (package! hydra)
 (package! which-key)
@@ -35,6 +25,7 @@
 (package! rustic)
 (package! lsp-mode)
 (package! lsp-ui)
+(package! lsp-ivy)
 (package! flycheck)
 (package! bpftrace-mode)
 (package! js2-mode)
@@ -46,6 +37,4 @@
 (package! kotlin-mode)
 (package! jq-format)
 (package! rego-mode)
-
-(package! copilot
-  :recipe (:host github :repo "zerolfx/copilot.el" :files ("*.el" "dist")))
+(package! copilot :recipe (:host github :repo "copilot-emacs/copilot.el" :files ("*.el")))
