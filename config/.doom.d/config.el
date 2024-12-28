@@ -143,28 +143,6 @@
   (smartparens-global-mode -1))
 (remove-hook 'doom-first-buffer-hook #'smartparens-global-mode)
 
-(add-hook 'java-mode-hook
-          (lambda ()
-            (setq c-default-style "linux")
-            (setq indent-tabs-mode nil)
-            (setq c-basic-offset 4)
-            (c-set-offset 'arglist-intro '+)
-            (c-set-offset 'arglist-close '0)
-            (c-set-offset 'case-label '+)
-            (display-line-numbers-mode 1)
-            (auto-complete-mode t)))
-
-(add-hook 'json-mode-hook
-          (lambda ()
-            (make-local-variable 'js-indent-level)
-            (setq tab-width 2)
-            (setq js-indent-level 2)))
-
-(add-hook 'js-mode-hook
-          (lambda ()
-            (make-local-variable 'js-indent-level)
-            (setq js-indent-level 2)))
-
 (add-to-list 'auto-mode-alist '("\\.mdx$" . markdown-mode))
 
 (use-package! copilot
@@ -181,8 +159,12 @@
 ;; # Load language specific configuration files
 ;;   Please put `package!` declaration in package.el
 (load! "+cc")
+(load! "+java")
+(load! "+javascript")
+(load! "+lsp")
 (load! "+ruby")
 (load! "+golang")
 (load! "+rust")
 (load! "+jsonnet")
+(load! "+json")
 (load! "+typescript")
