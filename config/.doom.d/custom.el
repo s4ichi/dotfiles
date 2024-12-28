@@ -5,7 +5,7 @@
  ;; If there is more than one, they won't work right.
  '(enh-ruby-add-encoding-comment-on-save nil)
  '(package-selected-packages '(jq-format company kotlin-mode))
- '(warning-suppress-log-types '((doom-first-input-hook))))
+ '(warning-suppress-log-types '((lsp-mode) (doom-first-input-hook))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
