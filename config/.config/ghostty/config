@@ -1,0 +1,24 @@
+theme = Tomorrow Night Bright
+
+font-family = Fira Code
+font-family-bold = Fira Code
+font-style = Regular
+font-style-bold = SemiBold
+
+cursor-style = block
+
+adjust-cell-height = -5%
+adjust-cell-width = -5%
+
+window-padding-x = 0
+window-padding-y = 0
+window-padding-balance = true
+window-save-state = always
+window-theme = ghostty
+window-decoration = true
+
+background-opacity = 0.75
+background-blur-radius = 20
+
+macos-titlebar-style = hidden
+macos-titlebar-style = transparent
