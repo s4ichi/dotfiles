@@ -3,33 +3,37 @@
 (doom!
  :completion
  (company +childframe) ; the ultimate code completion backend
- ;;helm             ; the *other* search engine for love and life
- ;;ido              ; the other *other* search engine...
- ivy              ; a search engine for love and life
+ ;;helm                ; the *other* search engine for love and life
+ ;;ido                 ; the other *other* search engine...
+ ivy                   ; a search engine for love and life
 
  :ui
- workspaces        ; tab emulation, persistence & separate workspaces
- ;;deft              ; notational velocity for Emacs
- doom              ; what makes DOOM look the way it does
- doom-dashboard    ; a nifty splash screen for Emacs
- doom-quit         ; DOOM quit-message prompts when you quit Emacs
- ;;fill-column     ; a `fill-column' indicator
- ;;indent-guides     ; highlighted indent columns
- minimap           ; show a map of the code on the side
- hl-todo           ; highlight TODO/FIXME/NOTE tags
- modeline          ; snazzy, Atom-inspired modeline, plus API
- nav-flash         ; blink the current line after jumping
- ;;neotree           ; a project drawer, like NERDTree for vim
- ;;treemacs          ; a project drawer, like neotree but cooler
- ;; (popup            ; tame sudden yet inevitable temporary windows
- ;;  +all             ; catch all popups that start with an asterix
- ;;  +defaults)       ; default popup rules
- ;;pretty-code       ; replace bits of code with pretty symbols
- ;;tabs              ; a tab bar for Emacs
- unicode           ; extended unicode support for various languages
- vc-gutter         ; vcs diff in the fringe
- vi-tilde-fringe   ; fringe tildes to mark beyond EOB
- ;;window-select     ; visually switch windows
+ workspaces         ; tab emulation, persistence & separate workspaces
+ ;;deft             ; notational velocity for Emacs
+ doom               ; what makes DOOM look the way it does
+ doom-dashboard     ; a nifty splash screen for Emacs
+ doom-quit          ; DOOM quit-message prompts when you quit Emacs
+ ;;indent-guides    ; highlighted indent columns
+ minimap            ; show a map of the code on the side
+ hl-todo            ; highlight TODO/FIXME/NOTE tags
+ modeline           ; snazzy, Atom-inspired modeline, plus API
+ nav-flash          ; blink the current line after jumping
+ ;;neotree          ; a project drawer, like NERDTree for vim
+ ;;treemacs         ; a project drawer, like neotree but cooler
+ ;; (popup          ; tame sudden yet inevitable temporary windows
+ ;;  +all           ; catch all popups that start with an asterix
+ ;;  +defaults)     ; default popup rules
+ ;;pretty-code      ; replace bits of code with pretty symbols
+ ;;tabs             ; a tab bar for Emacs
+ unicode            ; extended unicode support for various languages
+ vc-gutter          ; vcs diff in the fringe
+ ;;vi-tilde-fringe  ; fringe tildes to mark beyond EOB
+ ;;window-select    ; visually switch windows
+ ;;zen              ; distraction-free coding or writing
+ ;;(emoji           ; replace keywords with emojis
+ ;;  +ascii
+ ;;  +github
+ ;;  +unicode)
 
  :editor
  ;;fold              ; (nigh) universal code folding
@@ -42,15 +46,15 @@
  ;;file-templates    ; auto-snippets for empty files
 
  :emacs
- dired            ; making dired pretty [functional]
- electric          ; smarter, keyword-based electric-indent
+ dired               ; making dired pretty [functional]
+ electric            ; smarter, keyword-based electric-indent
  ;;imenu             ; an imenu sidebar and searchable code index
- vc                ; version-control and Emacs, sitting in a tree
+ vc                  ; version-control and Emacs, sitting in a tree
 
  :term
  ;;eshell            ; the elisp shell that works everywhere
  ;;shell             ; simple shell REPL for Emacs
- term              ; basic terminal emulator for Emacs
+ term                ; basic terminal emulator for Emacs
  ;;vterm             ; the best terminal emulation in Emacs
 
  :checkers
@@ -61,32 +65,32 @@
  :tools
  ;;ansible
  ;;eval              ; run code, run (also, repls)
- (lookup           ; helps you navigate your code and documentation
-  +docsets)        ; ...or in Dash docsets locally
+ (lookup             ; helps you navigate your code and documentation
+  +docsets)          ; ...or in Dash docsets locally
  docker
  ;;editorconfig      ; let someone else argue about tabs vs spaces
  ;;ein               ; tame Jupyter notebooks with emacs
  ;;flyspell          ; tasing you for misspelling mispelling
  ;;gist              ; interacting with github gists
  ;;lsp
- magit             ; a git porcelain for Emacs
+ magit               ; a git porcelain for Emacs
  ;;make              ; run make tasks from Emacs
  ;;password-store    ; password manager for nerds
  ;;pdf               ; pdf enhancements
  ;;prodigy           ; FIXME managing external services & code builders
  ;;rgb               ; creating color strings
- terraform         ; infrastructure as code
+ terraform           ; infrastructure as code
  ;;tmux              ; an API for interacting with tmux
  ;;upload            ; map local to remote projects via ssh/ftp
  ;;wakatime
  ;;vterm             ; another terminals in Emacs
 
  :os
- macos             ; MacOS-specific commands
+ macos               ; MacOS-specific commands
 
  :lang
  ;;assembly          ; assembly for fun or debugging
- (cc +irony)         ; C/C++/Obj-C madness
+ cc                  ; C/C++/Obj-C madness
  ;;clojure           ; java with a lisp
  ;;common-lisp       ; if you've seen one lisp, you've seen them all
  ;;coq               ; proofs-as-programs
@@ -96,7 +100,7 @@
  ;;erlang            ; an elegant language for a more civilized age
  ;;elixir            ; erlang done right
  ;;elm               ; care for a cup of TEA?
- emacs-lisp        ; drown in parentheses
+ emacs-lisp          ; drown in parentheses
  ;;ess               ; emacs speaks statistics
  ;;go                ; the hipster dialect
  ;;(haskell +intero) ; a language that's lazier than I am
@@ -105,19 +109,19 @@
  ;;(java +meghanada) ; the poster child for carpal tunnel syndrome
  ;;javascript        ; all(hope(abandon(ye(who(enter(here))))))
  ;;julia             ; a better, faster MATLAB
- latex             ; writing papers in Emacs has never been so fun
+ latex               ; writing papers in Emacs has never been so fun
  ;;ledger            ; an accounting system in Emacs
  ;;lua               ; one-based indices? one-based indices
  ;;markdown          ; writing docs for people to ignore
  ;;nim               ; python + lisp at the speed of c
  ;;nix               ; I hereby declare "nix geht mehr!"
  ;;ocaml             ; an objective camel
- ;; (org              ; organize your plain life in plain text
- ;;  +attach          ; custom attachment system
- ;;  +babel           ; running code in org
- ;;  +capture         ; org-capture in and outside of Emacs
- ;;  +export          ; Exporting org to whatever you want
- ;;  +present)        ; Emacs for presentations
+ ;;(org              ; organize your plain life in plain text
+ ;; +attach          ; custom attachment system
+ ;; +babel           ; running code in org
+ ;; +capture         ; org-capture in and outside of Emacs
+ ;; +export          ; Exporting org to whatever you want
+ ;; +present)        ; Emacs for presentations
  ;;perl              ; write code no one else can comprehend
  ;;php               ; perl's insecure younger brother
  ;;plantuml          ; diagrams for confusing people more
@@ -129,11 +133,12 @@
  ;;ruby              ; 1.step do {|i| p "Ruby is #{i.even? ? 'love' : 'life'}"}
  ;;rust              ; Fe2O3.unwrap().unwrap().unwrap().unwrap()
  ;;scala             ; java, but good
- (sh +zsh)        ; she sells (ba|z|fi)sh shells on the C xor
+ (sh +zsh)           ; she sells (ba|z|fi)sh shells on the C xor
  ;;solidity          ; do you need a blockchain? No.
- swift             ; who asked for emoji variables?
- web               ; the tubes
+ swift               ; who asked for emoji variables?
+ web                 ; the tubes
  ;;vala              ; GObjective-C
+ ;;yaml                ; JSON, but readable
 
  :app
  ;;(email +gmail)    ; emacs as an email client

@@ -25,6 +25,7 @@
 (package! rustic)
 (package! lsp-mode)
 (package! lsp-ui)
+(package! lsp-ivy)
 (package! flycheck)
 (package! bpftrace-mode)
 (package! js2-mode)
