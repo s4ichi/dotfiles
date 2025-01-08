@@ -5,6 +5,9 @@ font-family-bold = Fira Code
 font-style = Regular
 font-style-bold = SemiBold
 
+font-family = sans-serif
+font-feature = -dlig
+
 cursor-style = block
 
 adjust-cell-height = -5%
