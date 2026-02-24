@@ -1,5 +1,6 @@
 (add-to-list 'auto-mode-alist '("\\.ts\\'" . typescript-mode))
 (add-to-list 'auto-mode-alist '("\\.tsx\\'" . typescript-mode))
+(add-to-list 'auto-mode-alist '("\\.mts\\'" . typescript-mode))
 
 (defun setup-tide-mode ()
   (interactive)
