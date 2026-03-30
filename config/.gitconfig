@@ -19,13 +19,28 @@
   gpgsign = true
 [push]
   default = simple
+  autoSetupRemote = true
 [pull]
   rebase = true
 [merge]
   ff = only
-  conflictstyle = diff3
+  conflictstyle = zdiff3
+[rerere]
+  enabled = true
+  autoupdate = true
 [diff]
-  colorMoved = default
+  algorithm = histogram
+  colorMoved = plain
+  mnemonicPrefix = true
+  renames = true
+[rebase]
+  autoSquash = true
+  autoStash = true
+  updateRefs = true
+[branch]
+  sort = -committerdate
+[tag]
+  sort = version:refname
 [ghq]
   root = ~/src
 [url "git@github.com:"]

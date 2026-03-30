@@ -6,7 +6,10 @@
  '(enh-ruby-add-encoding-comment-on-save nil)
  '(package-selected-packages '(jq-format company kotlin-mode))
  '(warning-suppress-log-types
-   '((copilot copilot-exceeds-max-char) (lsp-mode) (doom-first-input-hook))))
+   '((copilot copilot-exceeds-max-char)
+     (comp)
+     (lsp-mode)
+     (doom-first-input-hook))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
