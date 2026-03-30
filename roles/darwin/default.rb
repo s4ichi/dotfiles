@@ -20,6 +20,7 @@ include_cookbook 'ghostty'
 include_cookbook 'peco'
 include_cookbook 'fzf'
 include_cookbook 'ghq'
+include_cookbook 'alfred-workflows'
 
 execute "defaults write -g InitialKeyRepeat -int #{node[:initial_key_repeat]}" do
   not_if "test $(defaults read -g InitialKeyRepeat) -eq #{node[:initial_key_repeat]}"
