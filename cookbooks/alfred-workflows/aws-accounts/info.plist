@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.s4ichi.aws-accounts</string>
+	<key>category</key>
+	<string>Productivity</string>
+	<key>connections</key>
+	<dict>
+		<key>A3F8C2D1-4B5E-6789-ABCD-EF0123456789</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>B4C9D0E2-5F6A-7890-BCDE-F01234567890</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>s4ichi</string>
+	<key>description</key>
+	<string>Search AWS profiles and open AssumeRole page</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>aws-accounts</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<false/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>aws</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Searching...</string>
+				<key>script</key>
+				<string>#!/bin/bash
+
+query="${1}"
+config_file="${HOME}/.aws/config"
+
+urlencode() {
+    local string="$1"
+    local encoded=""
+    local length="${#string}"
+    for (( i = 0; i &lt; length; i++ )); do
+        local c="${string:i:1}"
+        case "$c" in
+            [a-zA-Z0-9.~_-]) encoded+="$c" ;;
+            @) encoded+="%40" ;;
+            *) encoded+=$(printf '%%%02X' "'$c") ;;
+        esac
+    done
+    printf '%s' "$encoded"
+}
+
+items=""
+first=true
+current_profile=""
+current_role_arn=""
+current_login_session=""
+
+process_profile() {
+    local profile="$1"
+    local role_arn="$2"
+    local login_session="$3"
+    local account_id iam_role
+
+    if [[ "$role_arn" =~ ^arn:aws:iam::([0-9]+):role/(.+)$ ]]; then
+        account_id="${BASH_REMATCH[1]}"
+        iam_role="${BASH_REMATCH[2]}"
+    elif [[ "$login_session" =~ ^arn:aws:sts::([0-9]+):assumed-role/([^/]+)/ ]]; then
+        account_id="${BASH_REMATCH[1]}"
+        iam_role="${BASH_REMATCH[2]}"
+    else
+        return
+    fi
+
+    [[ -z "$profile" ]] &amp;&amp; return
+
+    if [[ -n "$query" ]]; then
+        local profile_lower
+        profile_lower=$(printf '%s' "$profile" | tr '[:upper:]' '[:lower:]')
+        local query_lower
+        query_lower=$(printf '%s' "$query" | tr '[:upper:]' '[:lower:]')
+        [[ "$profile_lower" != *"$query_lower"* ]] &amp;&amp; return
+    fi
+
+    local encoded_role encoded_label color url item
+    encoded_role=$(urlencode "$iam_role")
+    encoded_label=$(urlencode "$profile")
+    color=$(printf '%s' "$profile" | md5 | cut -c1-6)
+    url="https://signin.aws.amazon.com/switchrole?account=${account_id}&amp;roleName=${encoded_role}&amp;displayName=${encoded_label}&amp;color=${color}"
+    item="{\"title\":\"${profile}\",\"subtitle\":\"${account_id} | ${iam_role}\",\"arg\":\"${url}\",\"autocomplete\":\"${profile}\"}"
+    if $first; then
+        items="$item"
+        first=false
+    else
+        items="${items},${item}"
+    fi
+}
+
+if [[ ! -f "$config_file" ]]; then
+    printf '{"items":[{"title":"~/.aws/config not found","subtitle":"Please configure your AWS credentials","valid":false}]}'
+    exit 0
+fi
+
+while IFS= read -r line || [[ -n "$line" ]]; do
+    if [[ "$line" =~ ^\[profile[[:space:]]+([^]]+)\]$ ]]; then
+        new_profile="${BASH_REMATCH[1]}"
+        process_profile "$current_profile" "$current_role_arn" "$current_login_session"
+        current_profile="$new_profile"
+        current_role_arn=""
+        current_login_session=""
+    elif [[ -n "$current_profile" &amp;&amp; "$line" =~ ^[[:space:]]*role_arn[[:space:]]*=[[:space:]]*(.+)$ ]]; then
+        current_role_arn="${BASH_REMATCH[1]}"
+    elif [[ -n "$current_profile" &amp;&amp; -z "$current_role_arn" &amp;&amp; "$line" =~ ^[[:space:]]*login_session[[:space:]]*=[[:space:]]*(.+)$ ]]; then
+        current_login_session="${BASH_REMATCH[1]}"
+    fi
+done &lt; "$config_file"
+
+process_profile "$current_profile" "$current_role_arn" "$current_login_session"
+
+printf '{"items":[%s]}' "$items"
+</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>Search AWS profile (&lt;role&gt;@&lt;account&gt;)</string>
+				<key>title</key>
+				<string>AWS Accounts</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>A3F8C2D1-4B5E-6789-ABCD-EF0123456789</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>skipqueryencode</key>
+				<true/>
+				<key>skipvarencode</key>
+				<true/>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>{query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>B4C9D0E2-5F6A-7890-BCDE-F01234567890</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>A3F8C2D1-4B5E-6789-ABCD-EF0123456789</key>
+		<dict>
+			<key>xpos</key>
+			<real>150</real>
+			<key>ypos</key>
+			<real>75</real>
+		</dict>
+		<key>B4C9D0E2-5F6A-7890-BCDE-F01234567890</key>
+		<dict>
+			<key>xpos</key>
+			<real>450</real>
+			<key>ypos</key>
+			<real>75</real>
+		</dict>
+	</dict>
+	<key>version</key>
+	<string>1.0</string>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>
