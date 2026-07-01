@@ -25,3 +25,5 @@ background-blur-radius = 20
 
 macos-titlebar-style = hidden
 macos-titlebar-style = transparent
+
+desktop-notifications = true

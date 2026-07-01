@@ -1,6 +1,6 @@
 node.reverse_merge!(
   fzf: {
-    version: '0.67.0',
+    version: '0.71.0',
   },
 )
 
