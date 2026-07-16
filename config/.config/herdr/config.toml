@@ -1,0 +1,43 @@
+onboarding = false
+
+[theme]
+name = "gruvbox"
+auto_switch = false
+
+[terminal]
+
+[update]
+channel = "stable"
+version_check = true
+manifest_check = true
+
+[keys]
+prefix = "ctrl+t"
+
+next_tab = "prefix+n"
+previous_tab = "prefix+p"
+
+switch_workspace = "prefix+shift+1..9"
+
+next_workspace = "prefix+o"
+previous_workspace = "prefix+shift+o"
+
+previous_agent = "prefix+,"
+next_agent = "prefix+."
+
+split_vertical = "prefix+\""
+split_horizontal = "prefix+%"
+
+last_pane = ""
+close_pane = ""
+toggle_sidebar = ""
+
+
+[ui]
+agent_panel_sort = "spaces"
+confirm_close = true
+prompt_new_tab_name = false
+show_agent_labels_on_pane_borders = true
+
+[ui.sound]
+enabled = false
