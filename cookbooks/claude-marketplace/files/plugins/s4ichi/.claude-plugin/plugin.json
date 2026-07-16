@@ -1,0 +1,7 @@
+{
+  "name": "s4ichi",
+  "description": "Personal habit skills for s4ichi",
+  "author": { "name": "s4ichi" },
+  "repository": "https://github.com/s4ichi/dotfiles",
+  "keywords": ["personal", "workflow", "dotfiles"]
+}

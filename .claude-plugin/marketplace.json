@@ -1,0 +1,14 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "s4ichi",
+  "owner": { "name": "s4ichi" },
+  "description": "s4ichi's personal Claude Code plugins hosted in dotfiles",
+  "plugins": [
+    {
+      "name": "s4ichi",
+      "source": "./cookbooks/claude-marketplace/files/plugins/s4ichi",
+      "description": "Personal habit skills",
+      "category": "workflow"
+    }
+  ]
+}
